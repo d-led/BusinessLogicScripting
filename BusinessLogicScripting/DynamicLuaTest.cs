@@ -32,6 +32,7 @@ namespace BusinessLogicScripting
             ((int)answer[0]).Should().Be(logic.TheAnswer());
 
             ((int)lua.logic.AnotherAnswer).Should().Be(logic.AnotherAnswer);
+            ((int)lua("return logic.AnotherAnswer")[0]).Should().Be(logic.AnotherAnswer);
         }
     }
 }
