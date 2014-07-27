@@ -69,5 +69,29 @@ namespace BusinessLogicScripting
                 action.ShouldThrow<Exception>();
             }
         }
+
+        [TestMethod]
+        public void ReturningEnums()
+        {
+            lua.logic = new SomeLogic();
+            ((SomeEnum)lua("return logic:Choose(true)")[0]).Should().Be(SomeEnum.Some);
+        }
+
+        [TestMethod]
+        public void ReturningOtherObjects()
+        {
+            lua.logic = new SomeLogic();
+            var answer = lua("return logic.Object")[0] as SomeObject;
+            answer.Should().NotBeNull();
+            answer.Name.Should().Be(new SomeObject().Name);
+        }
+
+        [TestMethod]
+        public void CreatingBoundObjects()
+        {
+            lua.NewObject = new Func<SomeObject>(() => new SomeObject());
+            var answer = lua("return NewObject()")[0] as SomeObject;
+            answer.Should().NotBeNull();
+        }
     }
 }
