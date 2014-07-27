@@ -75,6 +75,7 @@ namespace BusinessLogicScripting
         {
             lua.logic = new SomeLogic();
             ((SomeEnum)lua("return logic:Choose(true)")[0]).Should().Be(SomeEnum.Some);
+            ((SomeEnum)lua("return logic:Choose(false)")[0]).Should().Be(SomeEnum.None);
         }
 
         [TestMethod]
@@ -92,6 +93,33 @@ namespace BusinessLogicScripting
             lua.NewObject = new Func<SomeObject>(() => new SomeObject());
             var answer = lua("return NewObject()")[0] as SomeObject;
             answer.Should().NotBeNull();
+        }
+
+        [TestMethod]
+        public void AccessToOtherCLRBindingsOnlyOnDemand()
+        {
+            new Action(() => lua("print(System.Console.BufferHeight)"))
+                .ShouldThrow<Exception>();
+
+            lua.import("System");
+
+            var func = new Func<int>(() => (int)lua("return Console.BufferHeight")[0]);
+            new Action(() => func())
+                .ShouldNotThrow();
+            func().Should().Be(Console.BufferHeight);
+        }
+
+        [TestMethod]
+        public void LoadingAssembliesAndFilesShouldBeOptional()
+        {
+            lua("import = nil");
+            lua("require = nil");
+
+            new Action(() => lua("import 'System'"))
+                .ShouldThrow<Exception>();
+
+            new Action(() => lua("require 'lfs'"))
+                .ShouldThrow<Exception>();
         }
     }
 }
