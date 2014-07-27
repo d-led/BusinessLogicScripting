@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 2013
 VisualStudioVersion = 12.0.30501.0
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DynamicLuaTest", "BusinessLogicScripting\DynamicLuaTest.csproj", "{D3DF7123-2BC5-4080-95B0-E2D546E78011}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DynamicLuaTest", "DynamicLuaTest\DynamicLuaTest.csproj", "{D3DF7123-2BC5-4080-95B0-E2D546E78011}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BooTest", "BooTest\BooTest.csproj", "{DECB6B06-5184-4271-8338-1D525614C2CF}"
 EndProject
