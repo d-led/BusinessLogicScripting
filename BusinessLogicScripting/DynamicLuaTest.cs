@@ -25,9 +25,10 @@ namespace BusinessLogicScripting
             SomeLogic logic = new SomeLogic();
             lua.TheAnswer = new Func<int>(() => logic.TheAnswer());
 
-            ((int)lua.TheAnswer()).Should().Be(logic.TheAnswer());
+            ((int)lua.TheAnswer()[0]).Should().Be(logic.TheAnswer());
 
-            //lua("Systen.Console.WriteLine(33)");
+            lua.logic = logic;
+            ((int)lua.logic.TheAnswer()).Should().Be(logic.TheAnswer());    
         }
     }
 }
