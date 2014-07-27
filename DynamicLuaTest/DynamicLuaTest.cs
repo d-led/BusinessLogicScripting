@@ -88,6 +88,18 @@ namespace BusinessLogicScripting
         }
 
         [TestMethod]
+        public void NoAccessToPrivates()
+        {
+            lua.obj = new SomeObject();
+
+            new Action(() => lua("obj.name = 'blabla'"))
+                .ShouldThrow<Exception>();
+
+            string answer = lua("return obj.name")[0];
+            answer.Should().NotBe(new SomeObject().Name);
+        }
+
+        [TestMethod]
         public void CreatingBoundObjects()
         {
             lua.NewObject = new Func<SomeObject>(() => new SomeObject());
