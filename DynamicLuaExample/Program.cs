@@ -25,12 +25,17 @@ namespace DynamicLuaExample
                 ";
 
                 lua(user_static_config);
-                string url = (string)lua.config.url;
+                string url = lua.config.url;
                 Console.WriteLine(url);
 
-                lua("config.answer = math.floor(131.94689145078/math.pi)");
-                var answer = (double)lua.config.answer;
+                // scripting the no more static configuration
+                lua("config.answer = nil or math.floor(131.94689145078/math.pi)");
+                int answer = (int)lua.config.answer;
                 Console.WriteLine(answer);
+
+                // as a function evaluator
+                dynamic result = lua("return 1, 'world'");
+                Console.WriteLine("{0} {1}", result[0], result[1]);
             }
         }
     }
