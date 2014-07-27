@@ -6,14 +6,14 @@ using System.Threading.Tasks;
 
 namespace DomainLogic
 {
-    public class DomainLogic
+    public class SomeLogic
     {
-        int TheAnswer()
+        public int TheAnswer()
         {
             return 42;
         }
 
-        int AnotherAnswer
+        public int AnotherAnswer
         {
             get { return 33; }
         }
