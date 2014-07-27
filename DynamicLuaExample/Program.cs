@@ -6,6 +6,17 @@ using System.Threading.Tasks;
 
 namespace DynamicLuaExample
 {
+    class Example
+    {
+        int answer = 42;
+        public int Answer { get { return answer; } }
+
+        public int Add(int a, int b)
+        {
+            return a + b;
+        }
+    }
+
     class Program
     {
         static void Main(string[] args)
@@ -36,6 +47,19 @@ namespace DynamicLuaExample
                 // as a function evaluator
                 dynamic result = lua("return 1, 'world'");
                 Console.WriteLine("{0} {1}", result[0], result[1]);
+
+                // binding .NET classes and functions
+                lua.NewExample = new Func<Example>(() => new Example());
+
+                // Lua functions may be called via dynamiclua
+                Example my_example = lua.NewExample();
+                Console.WriteLine(my_example.Answer);
+
+                lua(@"
+                    local example = NewExample()
+                    print(example.Answer)
+                    print(example:Add(2,3))
+                ");
             }
         }
     }

@@ -52,7 +52,7 @@ namespace BusinessLogicScripting
         [TestMethod]
         public void KnownCrashingBugsShouldBeControllable()
         {
-            //http://www.lua.org/bugs.html
+            // excercising http://www.lua.org/bugs.html
 
             Action[] actions = new Action[] {
                 ()=>lua(@"table.unpack({}, 0, 2^31 - 1)"),
