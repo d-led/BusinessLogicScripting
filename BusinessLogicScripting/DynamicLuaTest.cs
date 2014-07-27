@@ -28,7 +28,9 @@ namespace BusinessLogicScripting
             ((int)lua.TheAnswer()[0]).Should().Be(logic.TheAnswer());
 
             lua.logic = logic;
-            ((int)lua.logic.TheAnswer()).Should().Be(logic.TheAnswer());    
+            ((int)lua.logic.TheAnswer()).Should().Be(logic.TheAnswer());
+
+            ((int)lua.logic.AnotherAnswer).Should().Be(logic.AnotherAnswer);
         }
     }
 }
