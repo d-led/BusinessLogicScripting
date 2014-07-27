@@ -1,0 +1,40 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2013
+VisualStudioVersion = 12.0.30501.0
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DynamicLuaTest", "BusinessLogicScripting\DynamicLuaTest.csproj", "{D3DF7123-2BC5-4080-95B0-E2D546E78011}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NeoLuaTest", "NeoLuaTest\NeoLuaTest.csproj", "{F368F1E4-1D6F-4298-8305-B2C496AE0385}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BooTest", "BooTest\BooTest.csproj", "{DECB6B06-5184-4271-8338-1D525614C2CF}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "IronRubyTest", "IronRubyTest\IronRubyTest.csproj", "{FAF495FB-D6A2-4670-8CDE-635FDF89EFFA}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{D3DF7123-2BC5-4080-95B0-E2D546E78011}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D3DF7123-2BC5-4080-95B0-E2D546E78011}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D3DF7123-2BC5-4080-95B0-E2D546E78011}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D3DF7123-2BC5-4080-95B0-E2D546E78011}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F368F1E4-1D6F-4298-8305-B2C496AE0385}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F368F1E4-1D6F-4298-8305-B2C496AE0385}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F368F1E4-1D6F-4298-8305-B2C496AE0385}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F368F1E4-1D6F-4298-8305-B2C496AE0385}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DECB6B06-5184-4271-8338-1D525614C2CF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DECB6B06-5184-4271-8338-1D525614C2CF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DECB6B06-5184-4271-8338-1D525614C2CF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DECB6B06-5184-4271-8338-1D525614C2CF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{FAF495FB-D6A2-4670-8CDE-635FDF89EFFA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FAF495FB-D6A2-4670-8CDE-635FDF89EFFA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FAF495FB-D6A2-4670-8CDE-635FDF89EFFA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FAF495FB-D6A2-4670-8CDE-635FDF89EFFA}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
