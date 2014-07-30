@@ -6,9 +6,21 @@ using DomainLogic;
 namespace BusinessLogicScripting
 {
     [TestClass]
-    public class DynamicLuaTest
+    public class DynamicLuaTest : IDisposable
     {
         dynamic lua = new DynamicLua.DynamicLua();
+
+        void Dispose(bool should_dispose)
+        {
+            if (should_dispose)
+                lua.Dispose();
+        }
+
+        public void Dispose()
+        {
+            Dispose(true);
+            GC.SuppressFinalize(this);
+        }
 
         [TestMethod]
         public void SimpleScripting()
