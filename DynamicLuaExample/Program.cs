@@ -21,9 +21,9 @@ namespace DynamicLuaExample
     {
         static void Main(string[] args)
         {
-            //using(
-            dynamic lua = new DynamicLua.DynamicLua();
-            //)
+            using(
+            dynamic lua = new DynamicLua.DynamicLua()
+            )
             {
                 // hello world
                 Console.WriteLine(lua("return 2+2"));

@@ -32,8 +32,9 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="DynamicLua">
-      <HintPath>..\packages\DynamicLua.1.1.1.0\lib\net40-Client\DynamicLua.dll</HintPath>
+    <Reference Include="DynamicLua, Version=1.1.2.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\DynamicLua.1.1.2.0\lib\net40-Client\DynamicLua.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
