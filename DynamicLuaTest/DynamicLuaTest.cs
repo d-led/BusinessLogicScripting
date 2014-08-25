@@ -100,6 +100,21 @@ namespace BusinessLogicScripting
         }
 
         [TestMethod]
+        public void NoAccessToPrivatesThroughDynamicLua()
+        {
+            lua.obj = new SomeObject();
+
+            new Action(() => { lua.obj.name = "blabla"; })
+                .ShouldThrow<Exception>();
+
+            string answer = null;
+            new Action(() => { answer = lua.obj.name; })
+                .ShouldThrow<Exception>();
+
+            answer.Should().NotBe(new SomeObject().Name);
+        }
+
+        [TestMethod]
         public void NoAccessToPrivates()
         {
             lua.obj = new SomeObject();
@@ -107,7 +122,7 @@ namespace BusinessLogicScripting
             new Action(() => lua("obj.name = 'blabla'"))
                 .ShouldThrow<Exception>();
 
-            string answer = lua("return obj.name")[0];
+            string answer = lua("return obj.name");
             answer.Should().NotBe(new SomeObject().Name);
         }
 
